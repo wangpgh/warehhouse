@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* @import 'styles: 2css'; */
+        h1 + p {
+            color: blueviolet;
+        }
+        /* css选择器 + 代表 选中紧挨前面元素的后面元素 */
+        div span + p {
+            color: cadetblue;
+        }
+        body {
+            background-color: darkgoldenrod;
+        }
+        /* @media  (min-width: 30em)表示该视口适于大于30em */
+        @media  (min-width: 30em) {
+            body {
+                background-color: cornflowerblue;
+            }
+
+        }
+        div p:first-line {
+            color: darkgreen;
+        }
+        blockquote {
+            border: #000 solid 2px;
+            background-color: darkgrey;
+        }
+        .fix-this {
+            all: unset;
+        }
+        /* all:unset 重置所有属性 */
+        article p:first-child::first-line{
+            font-weight: 700;
+        }
+        /* 在使用::before , ::after 必须添加content属性 不然不会生效*/
+        div::before{
+            content: "";
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is my first CSS 54
+        5
+        5
+        45
+    </p>
+    <p>This is my first CSS example</p>
+    <div>
+        <span>我是span标签</span>
+        <p>我是p标签</p>
+        <p>我是第二个p标签
+            <br>
+        啦啦啦啦啦</p>
+    </div>
+    <p>我是第二个平元素</p>
+
+    <blockquote>
+        <p>这是一个blockquote标签</p>
+    </blockquote>
+    <blockquote class="fix-this">
+        <p>这又是一个blockquote标签</p>
+    </blockquote>
+
+    <article>
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo
+                melon azuki bean garlic.</p>
+    
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard
+                greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+    </article>
+</body>
+</html>

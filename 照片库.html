@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .full-img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>照片库</h1>
+
+    <div class="full-img">
+        <img class="displayed-img" src="images/pic1.jpg">
+        <div class="overlay"></div>
+        <button class="dark">变暗</button>
+    </div>
+
+    <div class="thumb-bar">
+
+    </div>
+</body>
+<script>
+    const img = document.querySelector('.full-img')
+    console.dir(img)
+
+    const btn = document.querySelector('.dark')
+
+
+    btn.addEventListener('click', function () {
+        if (btn.innerText == '变暗') {
+            img.style.backgroundColor = '#ccc'
+            btn.innerText = '变亮'
+        } else {
+            img.style.backgroundColor = ''
+            btn.innerText = '变暗'
+        }
+        
+    })
+
+
+    // async function hello() {
+    //     return greeting = await Promise.resolve("Hello")
+    // };
+    // hello().then(alert)
+
+    var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'
+    var request = new XMLHttpRequest()
+    request.open('GET', requestURL)
+    request.responseType = 'json'
+    request.send()
+
+    request.onload = function() {
+        var superHeroes = request.response
+        popualateHeader(superHeroes)
+        showHeroes(superHeroes)
+    }
+
+</script>
+
+</html>

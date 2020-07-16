@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>我的购物清单</h3>
+        <div>请输入你要添加的商品<input type="text" name="" id="" value=""><button class="add">添加</button></div>
+        <ul>
+        </ul>
+    </div>
+    <script>
+        var input = document.querySelector('input')
+        console.log(input)
+        input.focus()
+        var add = document.querySelector('.add')
+        console.log(add)
+        var ul = document.querySelector('ul')
+        add.addEventListener('click', function () {
+            var text = input.value
+            console.log(text)
+            input.value = ''
+            var li = document.createElement('li')
+            console.log(li);
+            li.innerText = text
+            var del = document.createElement('button')
+            del.innerText = '删除'
+            li.appendChild(del)
+            ul.appendChild(li)
+            del.onclick = function () {
+            ul.removeChild(li)
+        }
+        input.focus()
+         })
+        
+        
+        
+
+        
+    </script>
+</body>
+</html>

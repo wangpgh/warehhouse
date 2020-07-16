@@ -1,0 +1,10 @@
+h1 {
+    color: red;
+}
+
+/* + 代表相邻选择符 */
+h2 + p.special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
